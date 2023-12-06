@@ -6,23 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENG0018 Computer Laboratory 2023/24</title>
 
-        <style>
+    <style>
         * {
+            box-sizing: border-box;
             word-wrap: break-word;
         }
 
+        body {
+            background-color: #FFFFFF;
+            margin-left: 35px;
+            margin-right: 75px;
+        }
+
+        img.banner {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: calibri;
+        }
+
+        hr {
+            border: 1px solid #dddddd;
+        }
+
         table {
-            font-family: arial, sans-serif;
+            font-family: Arial, sans-serif;
             border-collapse: collapse;
             width: 30%;
+            margin-top: 10px;
         }
 
         td,
         th {
             border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
         }
 
-        p.ex1 {
+        .ex1 {
             margin-left: 50px;
         }
 
@@ -37,7 +63,7 @@
             position: relative;
         }
 
-        img {
+        img.slide {
             width: 100%;
             max-width: 800px;
         }
@@ -62,7 +88,7 @@
             margin: 0 5px;
         }
     </style>
-    
+
 </head>
 
 <body style="background-color:#FFFFFF;margin-left:35px;margin-right: 75px;">
@@ -316,8 +342,7 @@
             <i> Springer Nature</i>,
         </a></p>
 
-    </div>
-        <div id="slide-container">
+    <div id="slide-container">
         <img id="slide" src="Slide1.png" alt="Slide 1">
 
         <!-- Previous and Next buttons container-->
@@ -337,10 +362,10 @@
     </div>
 
     <footer>
-        <p id="date&time"></p>
+        <p id="date-time"></p>
         <script>
             const d = new Date();
-            document.getElementById("date&time").innerHTML = d;
+            document.getElementById("date-time").innerHTML = d;
         </script>
     </footer>
 
@@ -369,6 +394,7 @@
 
         showSlide();  // Call showSlide() to display the first slide
     </script>
+
 
 </body>
 
