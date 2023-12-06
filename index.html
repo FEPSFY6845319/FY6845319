@@ -292,6 +292,38 @@
 
     </div>    
 
+    
+<script>
+  // Array of slide image URLs
+  var slideImages = ["Slide1.png", "Slide2.png", "Slide3.png", "Slide4.png", "Slide5.png"];
+  var currentSlide = 0;
+  function showSlide() {
+    document.getElementById('slide').src = slideImages[currentSlide];
+  }
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slideImages.length;
+    showSlide();
+   }
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+    showSlide();
+  }
+  // Function to show a specific slide based on the button clicked
+  function showSlideNumber(slideNumber) {
+    currentSlide = slideNumber - 1;
+    showSlide();
+  }
+  // Call showSlide() to display the first slide
+  showSlide();
+</script>
+
+
+
+
+
+    
+
+    
     <footer>
         <p id="date&time"></p>
         <script>
