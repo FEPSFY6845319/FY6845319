@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENG0018 Computer Laboratory 2023/24</title>
 
-    <style>
+        <style>
         * {
             word-wrap: break-word;
         }
@@ -17,25 +17,51 @@
             width: 30%;
         }
 
-        td, th {
+        td,
+        th {
             border: 1px solid #dddddd;
         }
 
         p.ex1 {
             margin-left: 50px;
         }
-    </style>
 
-      <style>
-    table {
-      margin: 0 auto; /*  center the table*/
-    }
-                  img.right-align {
+        img.right-align {
             float: right;
-            margin-left: 100px; 
-            margin-bottom: 10px; 
+            margin-left: 100px;
+            margin-bottom: 10px;
         }
-  </style>
+
+        #slide-container {
+            text-align: center;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .button-container,
+        .slide-number-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: -50px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    </style>
     
 </head>
 
@@ -290,92 +316,26 @@
             <i> Springer Nature</i>,
         </a></p>
 
-    </div>    
+    </div>
+        <div id="slide-container">
+        <img id="slide" src="Slide1.png" alt="Slide 1">
 
-    
- <style>
-    #slide-container {
-      text-align: center;
-      position: relative;
-    }
+        <!-- Previous and Next buttons container-->
+        <div class="button-container">
+            <button class="button" onclick="prevSlide()">Previous</button>
+            <button class="button" onclick="nextSlide()">Next</button>
+        </div>
 
-    img {
-      width: 100%;
-      max-width: 800px;
-    }
+        <!-- Slide number buttons container-->
+        <div class="slide-number-container">
+            <button class="button" onclick="showSlideNumber(1)">1</button>
+            <button class="button" onclick="showSlideNumber(2)">2</button>
+            <button class="button" onclick="showSlideNumber(3)">3</button>
+            <button class="button" onclick="showSlideNumber(4)">4</button>
+            <button class="button" onclick="showSlideNumber(5)">5</button>
+        </div>
+    </div>
 
-    .button-container,
-    .slide-number-container {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-bottom: -50px;
-    }
-
-    .button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      margin: 0 5px;
-    }
-  </style>
-</head>
-<body>
-
-<div id="slide-container">
-  <img id="slide" src="Slide1.png" alt="Slide 1">
-  
-  <!-- Previous and Next buttons container--> 
-  <div class="button-container">
-    <button class="button" onclick="prevSlide()">Previous</button>
-    <button class="button" onclick="nextSlide()">Next</button>
-  </div>
-
-  <!-- Slide number buttons container-->  
-  <div class="slide-number-container">
-    <button class="button" onclick="showSlideNumber(1)">1</button>
-    <button class="button" onclick="showSlideNumber(2)">2</button>
-    <button class="button" onclick="showSlideNumber(3)">3</button>
-    <button class="button" onclick="showSlideNumber(4)">4</button>
-    <button class="button" onclick="showSlideNumber(5)">5</button>
-  </div>
-</div>
-
-<script>
-  var slideImages = ["Slide1.png", "Slide2.png", "Slide3.png", "Slide4.png", "Slide5.png"];
-  var currentSlide = 0;
-
-  function showSlide() {
-    document.getElementById('slide').src = slideImages[currentSlide];
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slideImages.length;
-    showSlide();
-  }
-
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
-    showSlide();
-  }
-
-  function showSlideNumber(slideNumber) {
-    currentSlide = slideNumber - 1;
-    showSlide();
-  }
-
-  showSlide();  // Call showSlide() to display the first slide
-</script>
-
-
-    
-
-    
     <footer>
         <p id="date&time"></p>
         <script>
@@ -384,6 +344,35 @@
         </script>
     </footer>
 
+    <script>
+        var slideImages = ["Slide1.png", "Slide2.png", "Slide3.png", "Slide4.png", "Slide5.png"];
+        var currentSlide = 0;
+
+        function showSlide() {
+            document.getElementById('slide').src = slideImages[currentSlide];
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideImages.length;
+            showSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+            showSlide();
+        }
+
+        function showSlideNumber(slideNumber) {
+            currentSlide = slideNumber - 1;
+            showSlide();
+        }
+
+        showSlide();  // Call showSlide() to display the first slide
+    </script>
+
+</body>
+
+</html>
 </body>
 
 </html>
