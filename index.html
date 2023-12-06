@@ -316,16 +316,17 @@
   // Call showSlide() to display the first slide
   showSlide();
 </script>
+
+    
 <div id="slide-container">
   <img id="slide" src="Slide1.png" alt="Slide 1" style="width:100%; max-width:800px;">
 
-<!-- Previous and Next buttons container--> 
+
 <div class="button-container">
   <button class="button" onclick="prevSlide()">Previous</button>
   <button class="button" onclick="nextSlide()">Next</button>
 </div>
 
-<!-- Slide number buttons container-->  
 <div class="slide-number-container">
   <button class="button" onclick="showSlideNumber(1)">1</button>
   <button class="button" onclick="showSlideNumber(2)">2</button>
@@ -335,13 +336,12 @@
 </div>
 
 <style>
-  /* Style to center the image */
+  /* center image */
   #slide-container {
     text-align: center;
     position: relative;
   }
   
-  /* Style for the buttpns */
   .button-container {
     position: absolute;
     bottom: 0;
